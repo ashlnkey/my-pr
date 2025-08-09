@@ -32,12 +32,38 @@ This package contains a complete setup for:
 ---
 
 ## 🚀 Setup Instructions
-composer install
-composer require drush/drush:*
-drush cim
+1. Install dependencies
+    composer install
+2. Select installation profile
+    During Drupal installation, choose:
+    Demo: Umami Food Magazine (Experimental)
+
+3. Import the database
+
+    Locate the database file in the db folder.
+    Import it into your MySQL server:
+
+    mysql -u root -p my_pr < db/my_pr.sql
+
+4. Configure database settings
+    In web/sites/default/settings.php, update the database configuration:
+
+    $databases['default']['default'] = [
+      'database' => 'my_pr',
+      'username' => 'root',
+      'password' => '',
+      'host' => '127.0.0.1',
+      'driver' => 'mysql',
+      'port' => '3306',
+      'prefix' => '',
+    ];
+
+5. Login credentials
+  Username: admin
+  Password: admin@123
 
 ### 1. Clone Project
-git clone https://github.com/ashlnkey/drupal-search-assignment.git
-cd drupal_search_package
+https://github.com/ashlnkey/my-pr.git
+cd my-pr
 
 
