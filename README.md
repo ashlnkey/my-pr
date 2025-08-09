@@ -1,4 +1,4 @@
-# drupal-search-assignment
+# my-pr
 This package contains a complete setup for:
 - Advanced search with exposed filters using Search API
 - Faceted search using the Facets module
