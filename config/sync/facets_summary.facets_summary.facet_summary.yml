@@ -1,0 +1,37 @@
+uuid: b51dc0ed-8cc9-4b57-9344-40e4f7cc121b
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.recipe_category
+    - facets.facet.tags
+    - search_api.index.recipe_index
+    - views.view.faceted_search
+  module:
+    - search_api
+id: facet_summary
+name: 'Facet Summary'
+facet_source_id: 'search_api:views_page__faceted_search__page_1'
+only_visible_when_facet_source_is_visible: false
+processor_configs:
+  show_text_when_empty:
+    processor_id: show_text_when_empty
+    weights:
+      build: '10'
+    settings:
+      text:
+        value: 'No results found.'
+        format: plain_text
+facets:
+  recipe_category:
+    checked: true
+    label: 'Recipe Category'
+    separator: ', '
+    show_count: false
+    weight: 0
+  tags:
+    checked: true
+    label: Tags
+    separator: ', '
+    show_count: false
+    weight: 0

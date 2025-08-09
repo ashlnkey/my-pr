@@ -1,0 +1,27 @@
+uuid: 45fd729e-8c53-4ca7-9f9b-3461d544f645
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - mytheme
+_core:
+  default_config_hash: iDZiXP2IUN3qEE__zNOAVdC9bO4zxZ3IB2OsPZ_dezM
+id: mytheme_account_menu
+theme: mytheme
+region: sidebar_first
+weight: 2
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

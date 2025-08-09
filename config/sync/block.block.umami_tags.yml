@@ -1,0 +1,29 @@
+uuid: 78867f54-76cd-4295-8beb-5ea258269914
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.tags
+  module:
+    - facets
+    - system
+  theme:
+    - umami
+id: umami_tags
+theme: umami
+region: sidebar
+weight: 0
+provider: null
+plugin: 'facet_block:tags'
+settings:
+  id: 'facet_block:tags'
+  label: Tags
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: umami_tags
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /faceted-search

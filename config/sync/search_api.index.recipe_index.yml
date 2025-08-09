@@ -1,0 +1,103 @@
+uuid: c68d7cd5-a07e-475f-b663-151f43b8e73a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ingredients
+    - field.storage.node.field_media_image
+    - field.storage.node.field_recipe_category
+    - field.storage.node.field_tags
+    - search_api.server.my_server
+  module:
+    - node
+    - taxonomy
+id: recipe_index
+name: 'Recipe Index'
+description: ''
+read_only: false
+field_settings:
+  field_ingredients:
+    label: Ingredients
+    datasource_id: 'entity:node'
+    property_path: field_ingredients
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_ingredients
+  field_media_image:
+    label: 'Media Image'
+    datasource_id: 'entity:node'
+    property_path: field_media_image
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_media_image
+  field_recipe_category:
+    label: 'Recipe category'
+    datasource_id: 'entity:node'
+    property_path: field_recipe_category
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_recipe_category
+  field_tags:
+    label: Tags
+    datasource_id: 'entity:node'
+    property_path: field_tags
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_tags
+  name:
+    label: 'Recipe category » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_recipe_category:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_recipe_category
+      module:
+        - taxonomy
+  name_1:
+    label: 'Tags » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_tags:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_tags
+      module:
+        - taxonomy
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: string
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - recipe
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  custom_value: {  }
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  delete_on_fail: true
+  index_directly: true
+  track_changes_in_references: true
+server: my_server

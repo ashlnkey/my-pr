@@ -1,0 +1,5 @@
+name: 'Bootstrap Filters'
+type: module
+description: 'Adds Bootstrap classes to exposed Views filters'
+core_version_requirement: ^10
+package: Custom

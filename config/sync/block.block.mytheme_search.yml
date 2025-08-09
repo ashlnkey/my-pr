@@ -1,0 +1,23 @@
+uuid: b494f78c-4bc2-4439-b1ba-5a325c71eebc
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - mytheme
+_core:
+  default_config_hash: ytgVjVWmeHzXTVcvVy0XfswIHZw1sCgY-dDI8XWDvHI
+id: mytheme_search
+theme: mytheme
+region: sidebar_first
+weight: 1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  label_display: visible
+  provider: search
+  page_id: node_search
+visibility: {  }
